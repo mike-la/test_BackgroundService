@@ -1,4 +1,4 @@
-package com.example.batterylevel;
+package com.example.channelTest;
 
 import android.os.Bundle;
 
@@ -12,8 +12,7 @@ import io.flutter.plugins.GeneratedPluginRegistrant;
 
 public class MainActivity extends FlutterActivity  {
   private static final String CHANNEL = "counterChannel";
-  private long counter;
-
+  private int counter;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -37,22 +36,4 @@ public class MainActivity extends FlutterActivity  {
             });
   }
 
-
-  protected void onDestroy(){
-      super.onDestroy();
   }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState){
-      super.onSaveInstanceState(outState);
-      outState.putLong("counter", counter);
-    }
-
-    protected void onRestoreInstanceState(Bundle savedInstanceState){
-      super.onRestoreInstanceState(savedInstanceState);
-
-      counter=savedInstanceState.getLong("counter");
-
-    }
-
-}
